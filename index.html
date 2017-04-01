@@ -7,7 +7,9 @@
 </head>
 <body ng-controller="myAppController">
    <ul ng-repeat="name in names">
-       <li>{{ name }}</li>
+       <li>{{ name }}
+           <a href="#" ng-click="removeName(name)">Remove</a>
+       </li>
    </ul>
    <form ng-submit="addName()">
        <input type="text" ng-model="inputName">
