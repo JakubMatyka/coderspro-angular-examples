@@ -1,0 +1,18 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Angular examples</title>
+</head>
+<body>
+    Name: <input id="textInput" type="text">
+    Hello!
+    <script>
+        var textInputElement = document.getElementById('textInput');
+
+        textInputElement.addEventListener('keyup', function () {
+          var text = textInputElement.value;
+          console.log('Key has been pressed ' + text);
+        })
+    </script>
+</body>
+</html>
