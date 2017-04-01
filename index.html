@@ -5,12 +5,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.11/angular.js"></script>
     <script src="app.js"></script>
 </head>
-<body>
-   <div ng-controller="myAppController">
-       Name: <input ng-model="name" type="text">
-       Surname: <input ng-model="surname" type="text">
-       Greetings: <input ng-model="greetings" type="text">
-       {{name}} {{surname}}. {{greetings}}!
-   </div>
+<body ng-controller="myAppController">
+   <ul ng-repeat="name in names">
+       <li>{{ name }}</li>
+   </ul>
 </body>
 </html>
