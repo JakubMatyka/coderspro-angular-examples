@@ -1,16 +1,11 @@
-<html>
+<html ng-app>
 <head>
     <meta charset="UTF-8">
     <title>Angular examples</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.11/angular.js"></script>
 </head>
 <body>
-    Name: <input id="textInput" type="text">
-    Hello <span id="nameSpan"></span>!
-    <script>
-        $('#textInput').on('keyup', function () {
-          $('#nameSpan').html($('#textInput').val())
-        })
-    </script>
+    Name: <input ng-model="textInput" type="text">
+    Hello {{ textInput }}!
 </body>
 </html>
