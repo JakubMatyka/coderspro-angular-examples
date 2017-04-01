@@ -5,13 +5,14 @@
 </head>
 <body>
     Name: <input id="textInput" type="text">
-    Hello!
+    Hello <span id="nameSpan"></span>!
     <script>
         var textInputElement = document.getElementById('textInput');
+        var nameSpanElement = document.getElementById('nameSpan');
 
         textInputElement.addEventListener('keyup', function () {
           var text = textInputElement.value;
-          console.log('Key has been pressed ' + text);
+          nameSpanElement.innerHTML = text;
         })
     </script>
 </body>
