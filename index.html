@@ -2,17 +2,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Angular examples</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
 </head>
 <body>
     Name: <input id="textInput" type="text">
     Hello <span id="nameSpan"></span>!
     <script>
-        var textInputElement = document.getElementById('textInput');
-        var nameSpanElement = document.getElementById('nameSpan');
-
-        textInputElement.addEventListener('keyup', function () {
-          var text = textInputElement.value;
-          nameSpanElement.innerHTML = text;
+        $('#textInput').on('keyup', function () {
+          $('#nameSpan').html($('#textInput').val())
         })
     </script>
 </body>
