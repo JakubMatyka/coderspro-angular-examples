@@ -1,23 +1,14 @@
 [
   {
     "name": "China",
-    "population": 1235324454,
-    "flag": "//www.flagipanstw.eu/images/flaga-chin.png",
-    "capital": "Bejing",
-    "gdp": 13000
+    "id": 1
   },
   {
     "name": "India",
-    "population": 1574352323,
-    "flag": "//upload.wikimedia.org/wikipedia/commons/thumb/4/41/Flag_of_India.svg/240px-Flag_of_India.svg.png",
-    "capital": "New Delhi",
-    "gdp": 8000
+    "id": 2
   },
   {
     "name": "United States",
-    "population": 235324454,
-    "flag": "//upload.wikimedia.org/wikipedia/en/thumb/a/a4/Flag_of_the_United_States.svg/300px-Flag_of_the_United_States.svg.png",
-    "capital": "Washington",
-    "gdp": 30000
+    "id": 3
   }
 ]
