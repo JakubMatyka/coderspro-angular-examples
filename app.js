@@ -25,6 +25,6 @@ countryApp.controller('CountryListCtrl', ['$scope', '$http', function($scope, $h
     });
 }]);
 
-countryApp.controller('CountryDetailCtrl', ['$scope', '$routeProvider', function ($scope, $routeProvider) {
-  console.log($routeProvider);
+countryApp.controller('CountryDetailCtrl', ['$scope', '$routeParams', function ($scope, $routeParams) {
+  console.log($routeParams);
 }]);
