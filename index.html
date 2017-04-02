@@ -5,9 +5,16 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.11/angular.js"></script>
     <script src="app.js"></script>
 </head>
-<body ng-controller="myAppController">
-   <ul>
-       <li ng-repeat="country in countries">{{ vm.country.name }} - {{ country.population }}</li>
-   </ul>
+<body ng-controller="myAppCtrl">
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Population</th>
+    </tr>
+    <tr ng-repeat="country in countries">
+        <td>{{ country.city }}</td>
+        <td>{{ country.population }}</td>
+    </tr>
+</table>
 </body>
 </html>
