@@ -7,14 +7,15 @@
 </head>
 <body ng-controller="myAppCtrl">
 <table>
-    Search: <input ng-model="query">
     <tr>
-        <th><a href="" ng-click="sortFields('city')">Name</a></th>
-        <th><a href="" ng-click="sortFields('population')">Population</a></th>
+        <th>Name</th>
+        <th>Population</th>
+        <th>Flag</th>
     </tr>
-    <tr ng-repeat="country in countries | filter: query | orderBy: sortField: reverse">
-        <td>{{ country.city }}</td>
+    <tr ng-repeat="country in countries">
+        <td>{{ country.name }}</td>
         <td>{{ country.population }}</td>
+        <td><img ng-src="{{ country.flag }}" alt="flag" width="120"></td>
     </tr>
 </table>
 </body>
