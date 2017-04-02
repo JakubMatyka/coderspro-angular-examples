@@ -7,11 +7,11 @@ var countryApp = angular.module('countryApp', [
 countryApp.config(['$routeProvider', function($routeProvider) {
   $routeProvider
     .when('/', {
-      template: '<ul><li ng-repeat="country in countries">{{ country.name }}</li></ul>',
+      templateUrl: 'country-list.html',
       controller: 'CountryListCtrl'
     })
     .when('/:countryName', {
-      template: 'wait',
+      templateUrl: 'country-detail.html',
       controller: 'CountryDetailCtrl'
     })
     .otherwise({
