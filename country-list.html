@@ -1,5 +1,9 @@
 <ul>
-    <li ng-repeat="country in countries">
-        <a href="#/{{ country.id }}">{{ country.name }}</a>
-    </li>
+    <!--By declaring attribute "country='...'" we are telling Angular to use our directive. We use it as an attribute-->
+    <!--because we declare it so with "restrict: 'A'".-->
+
+    <!--Angular directives starts with ng but your own directives can be named whatever you like.-->
+
+    <!--The variable "country" which we are passong to our directive is a "country" from ng-repeat.-->
+    <li ng-repeat="country in countries" country="country"></li>
 </ul>
