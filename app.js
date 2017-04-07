@@ -1,9 +1,11 @@
-// Show the flag in the listing for each country.
+// Extract controllers into separate file
 
 'use strict';
 
+// Register country controllers
 var countryApp = angular.module('countryApp', [
-  'ngRoute'
+  'ngRoute',
+  'countryControllers'
 ]);
 
 countryApp.config(['$routeProvider', function ($routeProvider) {
@@ -47,7 +49,6 @@ countryApp.directive('country', function () {
       country: '='
     },
     templateUrl: 'country.html',
-    // Call the service find method. Pass the id and a function as a callback and assign flag url
     controller: function ($scope, countries) {
       countries.find($scope.country.id, function (country) {
         $scope.country.flag = country.flag;
@@ -55,21 +56,3 @@ countryApp.directive('country', function () {
     }
   };
 });
-
-countryApp.controller('CountryListCtrl', ['$scope', 'countries',
-  function ($scope, countries) {
-    countries.list(function (countries) {
-      $scope.countries = countries;
-    })
-  }]);
-
-countryApp.controller('CountryDetailCtrl', ['$scope', '$routeParams', 'countries',
-  function ($scope, $routeParams, countries) {
-    countries.find($routeParams.countryId, function (country) {
-      $scope.country = country;
-    });
-
-    $scope.goBack = function () {
-      window.history.back();
-    }
-  }]);
