@@ -1,11 +1,12 @@
-// Extract controllers into separate file
+// Further extracting
 
 'use strict';
 
-// Register country controllers
 var countryApp = angular.module('countryApp', [
   'ngRoute',
-  'countryControllers'
+  'countryControllers',
+  'countriesFactory',
+  'countryDirective'
 ]);
 
 countryApp.config(['$routeProvider', function ($routeProvider) {
@@ -22,37 +23,3 @@ countryApp.config(['$routeProvider', function ($routeProvider) {
       redirect: '/'
     })
 }]);
-
-countryApp.factory('countries', ['$http', function ($http) {
-  return {
-    list: function (callback) {
-      $http({
-        method: 'GET',
-        url: 'countries.json',
-        cache: true
-      }).success(callback);
-    },
-    find: function (id, callback) {
-      $http({
-        method: 'GET',
-        url: 'country_' + id + '.json',
-        cache: true
-      }).success(callback)
-    }
-  };
-}]);
-
-countryApp.directive('country', function () {
-  return {
-    restrict: 'A',
-    scope: {
-      country: '='
-    },
-    templateUrl: 'country.html',
-    controller: function ($scope, countries) {
-      countries.find($scope.country.id, function (country) {
-        $scope.country.flag = country.flag;
-      });
-    }
-  };
-});
