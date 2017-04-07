@@ -1,4 +1,4 @@
-// Create a custom directive
+// Introduce asynchronous behaviour to our directive and create a controller for a directive.
 
 'use strict';
 
@@ -40,23 +40,19 @@ countryApp.factory('countries', ['$http', function ($http) {
   };
 }]);
 
-// Minimum config to make this work
-// We have a list of countries and each element of this list is executing some logic like fetching data from JSON file
-// for that particular country
-
-countryApp.directive('country', function(){
+countryApp.directive('country', function () {
   return {
-    // restrict to use it as an attribute
     restrict: 'A',
-    // By declaring scope property we isolate the scope of our directive from other part of our code.
-    // A bi-directional binding can be set up between the local scope property and the parent property using the = symbol.
-    // If the parent model changes, just like in normal data-binding then the local property will reflect the change.
-    // What happens here is a country from parent in country list passes a data to nested element and binds them.
-    // And because of that in our template for directive we can refer to that variable.
     scope: {
       country: '='
     },
-    templateUrl: 'country.html'
+    templateUrl: 'country.html',
+    // Inject $scope and a countries service
+    // Take a look at the console and remember about $$hashKey. NgRepeat directive creates this key each time it is
+    // executed.
+    controller: function ($scope, countries) {
+      console.log($scope.country);
+    }
   };
 });
 
