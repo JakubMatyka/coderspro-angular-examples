@@ -1,4 +1,4 @@
-// Introduce asynchronous behaviour to our directive and create a controller for a directive.
+// Show the flag in the listing for each country.
 
 'use strict';
 
@@ -47,11 +47,11 @@ countryApp.directive('country', function () {
       country: '='
     },
     templateUrl: 'country.html',
-    // Inject $scope and a countries service
-    // Take a look at the console and remember about $$hashKey. NgRepeat directive creates this key each time it is
-    // executed.
+    // Call the service find method. Pass the id and a function as a callback and assign flag url
     controller: function ($scope, countries) {
-      console.log($scope.country);
+      countries.find($scope.country.id, function (country) {
+        $scope.country.flag = country.flag;
+      });
     }
   };
 });
